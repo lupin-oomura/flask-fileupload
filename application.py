@@ -9,7 +9,7 @@ def hello():
     return '<h1>Hello World !</h1>'
 
 
-#from werkzeug.utils import secure_filename
+from werkzeug.utils import secure_filename
 
 @app.route('/uploads', methods=['POST', 'GET'])
 def upload_file():
