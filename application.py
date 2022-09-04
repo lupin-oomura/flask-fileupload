@@ -13,7 +13,18 @@ def hello():
 
 @app.route('/uploads', methods=['POST', 'GET'])
 def upload_file():
-    return render_template('uploads.html')
+
+    if request.method == 'POST':
+        f = request.files["the_file"]
+        #任意の階層をフルパスで指定(macの場合。任意のユーザー名は変更してください。)
+        f.save('files/' + secure_filename(f.filename))
+        #アップロードしてサーバーにファイルが保存されたらfinishedを表示
+        return render_template('finished.html')
+    else:
+    
+        #GETでアクセスされた時、uploadsを表示
+        return render_template('uploads.html')
+
 
 
 
