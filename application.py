@@ -11,10 +11,10 @@ def hello():
 
 #from werkzeug.utils import secure_filename
 
-@app.route('/uploads')
+@app.route('/uploads', methods=['POST', 'GET'])
 def upload_file():
+    return render_template('uploads.html')
 
-    return render_template('render.html')
 
 
 
