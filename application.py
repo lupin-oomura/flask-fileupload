@@ -26,3 +26,11 @@ def upload_file():
     
         #GETでアクセスされた時、uploadsを表示
         return render_template('uploads.html')
+
+
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+
