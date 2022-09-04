@@ -23,5 +23,6 @@ def upload_file():
         #アップロードしてサーバーにファイルが保存されたらfinishedを表示
         return render_template('finished.html')
     else:
+    
         #GETでアクセスされた時、uploadsを表示
         return render_template('uploads.html')
