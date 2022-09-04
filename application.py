@@ -19,7 +19,8 @@ def upload_file():
         #任意の階層をフルパスで指定(macの場合。任意のユーザー名は変更してください。)
         f.save('files/' + secure_filename(f.filename))
         #アップロードしてサーバーにファイルが保存されたらfinishedを表示
-        return render_template('finished.html')
+        username = request.form['username']
+        return render_template('finished.html', username = username)
     else:
     
         #GETでアクセスされた時、uploadsを表示
